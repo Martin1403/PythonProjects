@@ -6,7 +6,7 @@
 python -m venv .venv
 .venv\Scripts\activate.bat
 python.exe -m pip install --upgrade pip
-pip install fastapi
+pip install fastapi uvicorn
 pip freeze > requirements.txt
 
 # Create env from file
@@ -20,4 +20,9 @@ pip install -r requirements.txt
 docker build -t getting_started .
 docker build -t api api/Dockerfile
 docker run -it getting_started
+```
+# Run
+
+```commandline
+uvicorn api:app --port 8000 --reload
 ```
