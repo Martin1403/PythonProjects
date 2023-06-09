@@ -1,28 +1,22 @@
-## Windows:
+### Windows:
 ### python3.9
 ###### /todos
 ```
-# Make and install environment
 python -m venv .venv
 .venv\Scripts\activate.bat
 python.exe -m pip install --upgrade pip
 pip install fastapi uvicorn
 pip freeze > requirements.txt
-
-# Create env from file
-python -m venv .venv
-.venv\Scripts\activate.bat
 pip install -r requirements.txt
 ```
-# Docker
+### Docker
 ###### /todos
 ```
-docker build -t getting_started .
-docker build -t api api/Dockerfile
-docker run -it getting_started
+docker build -t api_image .
+docker run -it --rm -p 8000:8000 api_image
 ```
-# Run
-
+### Run
 ```commandline
 uvicorn api:app --port 8000 --reload
+curl http://127.0.0.1:8000/
 ```
