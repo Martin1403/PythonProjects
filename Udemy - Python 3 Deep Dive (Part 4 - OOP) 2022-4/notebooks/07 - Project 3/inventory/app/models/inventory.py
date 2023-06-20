@@ -144,3 +144,10 @@ class Resource:
         """
         validate_integer("num", num, 1)
         self._total += num
+
+
+class CPU(Resource):
+    """Resource subclass used to track specific CPU inventory pools"""
+
+    def __init__(self, name, manufacturer, total, allocated, cores, socket, power_watts):
+        
