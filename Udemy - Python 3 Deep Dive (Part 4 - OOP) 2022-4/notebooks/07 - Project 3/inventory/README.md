@@ -10,3 +10,7 @@ pip install -U pytest
 env\Scripts\activate
 
 ```
+## Nuitka commands
+```commandline
+python -m nuitka --standalone hello.py
+```
